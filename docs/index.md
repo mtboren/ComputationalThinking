@@ -1,0 +1,96 @@
+## General Agenda for Computational Thought and PowerShell Learning
+
+## Summary
+### Intentions:
+- Discuss thought and code patterns and practices for creating capabilities that do not exist in a click-world
+- Use PowerShell as the coding language for the discussion/application of the ideas
+- Make us all stronger (the overall team of "us in Tech") by honing our skills and augmenting our thought processes
+- Create tangible progress in the form of examples that address everyday situations (examples provided by participants)
+- Have a _discussion_ -- pipe up when there is a question, or for when clarification is appropriate
+    - this will span \<however long it takes to succeed> -- requires some commitment
+- Reach a point where participants are encapsulating their own desired actions in code, providing _those_ back as examples for the group
+- Minimize the amount of heckling
+
+## Detail
+
+- Computational thinking -- knowing _what_ we want, and then _how_ we can leverage CPUs to do it most quickly
+    - Emphasize the importance of, "figure out what to achieve, _then_ figure out how to achieve it"
+    - quick drawring/preso at [Computational Thinking](https://prezi.com/2qrarwldwhac/thinking) of overarching thinking/logic, and then the way that we enact or _translate_ those things into some language (or, into throw-away clicks in a GUI)
+    - another drawing that is about Getting data (objects), focusing on results (filtering objects), returning result (output/formatting/export), and how the fundamentals help throughout
+- [Re]visit the PS fundamentals (to include the most base items like filtering, selecting, iterating)
+    - ***Objects***, not text
+    - ***Discovery*** -- `Get-Command`, `Get-Help`, `Get-Member`
+    - Cmdlets, parameters, members of objects
+        - Named/Positional parameters
+    - Get objects -- filesystem examples with `Get-ChildItem`
+    - ***Pipeline*** -- what is it, and how is it an enabler?
+        - enables cmdlets to do one (or very few things) well, and helps enable maximum reusability/efficiency
+            - example:  we then do not need filtering types of functionality in _all_ cmdlets, as we can filter _any_ object with the fundamental set of cmdlets
+        - allows for far more permutations of cmdlets, enabling crazy numbers of possiblities, for all your use cases:
+            - 1000 binaries with, say, 1000 functions each:  `1000 * 1000` (= 1M different actions)
+            - conservative example:  100 cmdlets, piping just five together:  `100 * 99 * 98 * 97 * 96` (= 9B different actions)
+            - quick, mid-range example:  1360 cmdlets, piping just five together:  4.6 billion million (yes, B * M) permutations
+            - not that sheer volume wins, but clearly enables extensive possibilities
+        - the pipeline variable, `$_` -- the placeholder for the current PSItem (a.k.a., `$PSItem`)
+        - value by object from pipeline:  convenient providing of parameter value, especially as iterating
+        - Filtering objects -- include/exclude based on property values, calculations, etc (`Where-Object`)
+            - If the given cmdlet does not allow for filtering at invocation time, we can filter after receiving all of the objects from that cmdlet
+                - Reason being filtering at cmdlet level is way faster than filtering it later using `Where-Object`
+        - Selecting objects/properties -- still return objects, but with a potentially different set of properties than those with which the original object came, or only a subset of the overall objects (first 5, or last 10, or skip some) (`Select-Object`)
+            - Example of getting just the first one
+            - Example of getting the 11th one, by skipping first 10
+            - Example of reducing the number of properties on the resultant object (say, limiting the properties of fileinfo object to `FullName`, `LastWriteTime`, and `Length`)
+            - Example of adding other properties for a resultant object (say, `LengthMB` to a fileinfo object)
+    - Use some time for quick application of these to a use case or two, like getting familiar vSphere objects
+        - `Get-Command -Module VMware.VimAutomation.Core -Name Get-*`
+    - Additional goodness to discuss for the next sets of conversations:
+        - it _is_ an investment, but one that will pay off
+        - mindset about what can be done:  might be more productive to assume that X _can_ be done programmatically (and, if that's found to be false, maybe X needs re-evaluated?)
+        - reading help -- what are options, what are named/positional, values from pipeline, etc
+        - help topics -- about_* (`Get-Help -Category HelpFile`)
+        - Measure objects (`Measure-Object`)
+        - data structures: array, hashtable, and that there are others (specialized collections, for example)
+            - can use them for storing our objects, making objects for config/reference/splatting/new-object/etc.
+            - are not generally the "what" -- not usually the goal to, "I must have a hashtable of these seven things in order to succeed"
+            - more info:  `Get-Help about_Arrays` and `Get-Help about_Hash_Tables`
+        - Comparison operations (`Compare-Object`, `-gt`, `-lt`, etc.)
+        - Logic and flow control -- conditional statements, looping statements
+            - `if`, `while`, `switch`
+            - `Foreach-Object`
+        - Subexpressions, order of operation (precedence)
+            - `()`, `& {}`, `$()`
+        - `$null`:  what is it?
+            - it _is_ something -- it's not nothing
+            - can test for it with equality operator (`-eq`)
+            - can test for null or empty with .NET methods, like `[System.String]::IsNullOrEmpty()`
+        - Console control (formatting with `Format-*`)
+        - Export data for consumption by something else?  JSON, CSV, XML, whatever -- just make it such that it can be re-hydrated!  We want objects with which to deal; but, consider:  do we even need to have these objects hit disk?
+        - PowerShell Shell things:
+            - History
+            - Profile
+            - Command-line editing experience; useful PSReadline profile item examples all over the web, like "smart wrap line/selection with given character" -- quoting a string, enclosing a line in parenthesis or curly braces (to access sub property or make into scriptblock)
+            - Aliases
+            - Etc.
+- Problem prevention
+    - Realtime issue prevention and debugging measures/techniques
+        - copy/paste -- paths, names, variables, values, whatever
+        - tab completion -- valid cmdlet name, valid parameter name, valid parameter value?
+        - the point:  do not waste anyone's time with typos
+    - General re-use of \<known-good items>
+        - already in a function/cmdlet?  Use that function/cmdlet!
+        - in the session history?  Use it again! (see history searching and whatnot)
+        - create functions/scripts for when you identify some reusable snippet of functionality
+    - "safety" items -- `-Confirm`, `-WhatIf`
+- Problem investigation:  after-the-problem debugging
+    - `$Error` error stack
+    - Script execution strack trace
+    - PSBreakpoints, PS debugger
+- Other general items
+    - optimization -- memory/time minimizations
+        - `-RunAsync` to let things run in background
+        - disposed of objects (or consume them along the pipeline) versus storing every query's results in a variable (though, variables can be used for optimization / query reduction)
+    - output control
+        - `-OutVariable` -- like "tee"-ing an object to two outputs, console and variable
+        - stream redirection
+        - `Set-*` output capture
+    - API authoring -- more advanced, to approach as our comfort level allows
