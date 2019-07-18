@@ -1,0 +1,53 @@
+// for demo, set language mode to JSON
+// doc needs:  syntax corrected (commas -> colons), smart quotes replaced, format doc for (double new-lines removed, proper indentation)
+{
+
+“Info0” : {
+
+“FQDN”: “aServer.dom.com”,
+
+“MI”, “mi-023456789abcdef01”,
+
+“GUID”, “99581a54-8625-4fcf-a657-5f4d0635e3fa”,
+
+},
+
+“Info1” : {
+
+“balance”: 0,
+
+“return”: null
+
+},
+
+"other": {
+
+"vCenterInfo": {
+
+"vCFQDN": "myvc.dom.com",
+
+"version": {
+
+"build": 51243223,
+
+"productVersionDisplay": "10.5u1",
+
+"productId": "vpxd",
+
+"licenseInfo": {
+
+"productKey": "aa1872b5-4b90-4b36-b684-ac4b8fa4cf3a",
+
+"expiry": null,
+
+"licenseeName": "Roscoe"
+
+}
+
+}
+
+}
+
+}
+
+}
