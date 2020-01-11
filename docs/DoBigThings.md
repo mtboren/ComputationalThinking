@@ -30,12 +30,14 @@
 - reporting -- storage provisioned/consumed across, events, issues, data mining
 - configuration -- ensure that 500+ hosts are configured the same for the important features/attributes; 13 months for vDPG config -> 0.75 Months:  17.33x faster:  so, instead of a regular school day (say ~7h), school would be done in ~25 minutes, or school week:  done in 2h; or, 1h of homework, done in 3.4 minutes -- get an extra 56min of XBox per day?!
 - deployment -- need new server?  Get one in minutes instead of weeks
+
     | Activity | Before | After | Speed Increase |
     | -------- | ----- | ------ | -------- |
     | deploy/configure new VM | 7 days   | 1 hour | 168x faster
     | that's like: |
     | a school year | ~180 school days | one day | 168x faster
     | earn Eagle Scout | 5 years | 11 days | 168x faster
+
 - other things not even currently possible in manual way:
     - mine data about web request failures for a management infrastructure that gets approaching 1 million requests per hour; automation makes it possible in 4 minutes; how long to look through 1 million requests manually?  how long to just count to a million?  A:  27.7h if you count 10 numbers per second; and, at this new-event rate, it's making more than 140 new events per second; and, by the query running in 4 min, versus the 27.7h that let's say we could do it in, we're past 400x faster:  drive to GMa's | 2 hours | 18 seconds | 400x faster, drive to Disney World | 14.5 hours | 2 min 11 sec | 400x faster, fly to Orlando | 4 hours with airport arrival time and whatnot | 36 seconds | 400x faster
 - the point:  so much more interesting stuff to do -- automate everything we can so as to be able to have time for the interesting/meaningful/fun stuff!
