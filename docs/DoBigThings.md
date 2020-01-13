@@ -10,7 +10,10 @@
 **What**:  technology continues to enable ever more fantastic things. We will achieve things currently unimaginable as we leverage virtualization, cloud, automation, and computational thinking -- new products (games, social platforms, the next things), new solutions (self-driving cars, end hunger), eradicate disease, anything we want!
 
 ### Virtualization
-- Concept:  prezi
+- Basics:
+    - run more with less, and better utilize the hardware that you do get
+    - make more robust the machines that do run, separating them from the underlying hardware
+- Concept visualization:  [VirtualzAndClouds Prezi presentation](https://prezi.com/p/9v-hntpnwdvu/)
 - Benefits:  abstraction (separation of valuable things from the underlying hardware), agility, resilience, mobility, disaster avoidance, part of what enables treating of infrastructure as code
 - in the world:  on-premises (private cloud), public cloud (Amazon Web Services, Microsoft Azure, Google Cloud Platform)
     - sizing:  standard physical hosts are coming with 2TB memory (that's 2048GB -- 128x the memory size of today's better laptops), 80 cores, 187GHz (versus 4-8 cores in today's laptops); it's not uncommon to have 600+ physical hosts to support thousands of VMs (20K+ easily) -- doing 30x more (or 30x reduction in physical); so, instead of a serving of \<something you don't like yet> peas, say -- if there are 100 peas in a scoop, with this kind of ratio, we get all the same health benefit (performance) while needing only 3 peas
