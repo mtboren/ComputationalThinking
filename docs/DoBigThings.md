@@ -78,6 +78,7 @@
 
 ### Computational Thinking
 - what:  achieve the most things
+- quick Prezi preso on [Computational Thinking](https://prezi.com/2qrarwldwhac/thinking/)
 - processors can do billions of operations per second
 - mindset of pushing everything to run on hardware eventually, to harness the raw power:  see how we can package up anything we need done and send it to a processor to do
 
