@@ -1,7 +1,7 @@
 ##  Doing big things -- Virtualization, Automation, Computational Thinking
 
 ### Agenda:
-- Brief background of the Virtualization Admin role
+- Brief background of Virtualization
 - With what would any of this help?
 - What are these things?
 - How can we use them to do the awesome?
