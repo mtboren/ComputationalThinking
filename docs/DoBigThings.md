@@ -1,6 +1,7 @@
 ##  Doing big things -- Virtualization, Automation, Computational Thinking
 
 ### Agenda:
+- You tell me to clarify any things that are unclear
 - Brief background of Virtualization
 - With what would any of this help?
 - What are these things?
