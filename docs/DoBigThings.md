@@ -26,10 +26,10 @@
 
 ### Automation
 - Overview: translate actions in code (encapsulate)
-- need to CRUD (create, read, update, delete) things?  Can translate an action into code, then do it repeatably, the action is now portable/transferrable (everyone else can perform that action now, too)
+- need to CRUD (**C**reate, **R**ead, **U**pdate, **D**elete) things?  Can translate an action into code, then do it repeatably, the action is now portable/transferrable (everyone else can perform that action now, too)
     - if you write in code things like:
-        - `Set-Room -Clean:$true`
-        - `Set-Yard -Mowed:$true -BagLeaves:$true`
+        - `Set-Room -Clean:$true -LightOff:$true`
+        - `Set-Yard -Mowed:$true -BagLeaves:$true | Move-Clippings -ToCurb`
         - `Set-Homework -Category Math -Status:DoneCorrectly | Submit-Homework -Destination MySchool`
         - `Send-Ball -Destination OurBasket -Dunk:$true | Start-Celebration -DoMoonwalk:$true`
     - you can then let your friends (co-workers) have the same skills/capabilities (which translates into technology admin, automation, scheduling, etc.)
