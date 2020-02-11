@@ -36,15 +36,16 @@
         Set-Yard -Mowed:$true -BagLeaves:$true | Move-Clippings -ToCurb
 
         ## finish the math homework and submit to the teacher
-        Set-Homework -Category Math -Status:DoneCorrectly | Submit-Homework -Destination teacher@MySchool
+        Set-Homework -Category Math -Status:DoneCorrectly | Submit-Homework -Destination teacher@MySchool.com
 
         ## !! win big
         Send-Ball -Destination OurBasket -Dunk:$true | Start-Celebration -DoMoonwalk:$true
+        Show-Sportsmanship -Level Maximum
         ```
     - you can then let your friends (co-workers) have the same skills/capabilities (which translates into technology admin, automation, scheduling, etc.)
     - and, now that everyone can just set `Set-Room -Clean:$true` to run when home automation proximity detection sees that they leave their room, everyone can use that time saved to do `the awesome` and `the interesting`
 
-### Examples
+### Real World Examples: Automation and Awesome Returns
 - reporting -- storage provisioned/consumed across, events, issues, data mining
 - configuration -- ensure that 500+ hosts are configured the same for the important features/attributes; 13 months for virtual distributed portgroup ("vDPG") configuration -> 0.75 Months:  17.33x faster:  so, some comparisons:
 
