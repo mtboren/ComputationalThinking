@@ -28,10 +28,19 @@
 - Overview: translate actions in code (encapsulate)
 - need to CRUD (**C**reate, **R**ead, **U**pdate, **D**elete) things?  Can translate an action into code, then do it repeatably, the action is now portable/transferrable (everyone else can perform that action now, too)
     - if you write in code things like:
-        - `Set-Room -Clean:$true -LightOff:$true`
-        - `Set-Yard -Mowed:$true -BagLeaves:$true | Move-Clippings -ToCurb`
-        - `Set-Homework -Category Math -Status:DoneCorrectly | Submit-Homework -Destination MySchool`
-        - `Send-Ball -Destination OurBasket -Dunk:$true | Start-Celebration -DoMoonwalk:$true`
+        ```PowerShell
+        ## clean up my room, turn off the lights
+        Set-Room -Clean:$true -LightOff:$true
+
+        ## bag up the leaves, mow the yard, and put the stuff on the curb
+        Set-Yard -Mowed:$true -BagLeaves:$true | Move-Clippings -ToCurb
+
+        ## finish the math homework and submit to the teacher
+        Set-Homework -Category Math -Status:DoneCorrectly | Submit-Homework -Destination teacher@MySchool
+
+        ## !! win big
+        Send-Ball -Destination OurBasket -Dunk:$true | Start-Celebration -DoMoonwalk:$true
+        ```
     - you can then let your friends (co-workers) have the same skills/capabilities (which translates into technology admin, automation, scheduling, etc.)
     - and, now that everyone can just set `Set-Room -Clean:$true` to run when home automation proximity detection sees that they leave their room, everyone can use that time saved to do `the awesome` and `the interesting`
 
